@@ -1,0 +1,14 @@
+.bg-color {
+    background-color: #eac221;
+    font-family: "Lucida Console", "Courier New", monospace;
+}
+
+.btn-rounded {
+    border-radius: 40px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
