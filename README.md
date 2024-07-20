@@ -19,22 +19,41 @@ The Student Enrollment Form project utilizes JsonPowerDB to manage student regis
 
 #### Execute API
 
+```javascript
 var baseUrl = "http://api.login2explore.com:5577";
 function executeCommand(reqString, apiEndPointUrl) {
-var url = baseUrl + apiEndPointUrl;
-var jsonObj;
-$.post(url, reqString, function (result) {
-jsonObj = JSON.parse(result);
-}).fail(function (result) {
-var dataJsonObj = result.responseText;
-jsonObj = JSON.parse(dataJsonObj);
-});
-return jsonObj;
+  var url = baseUrl + apiEndPointUrl;
+  var jsonObj;
+  $.post(url, reqString, function (result) {
+    jsonObj = JSON.parse(result);
+  }).fail(function (result) {
+    var dataJsonObj = result.responseText;
+    jsonObj = JSON.parse(dataJsonObj);
+  });
+  return jsonObj;
 }
+```
 
 ## Create a PUT Request String
 
+```javascript
 function createPUTRequest(connToken, jsonObj, dbName, relName) {
-var putRequest = "{\n" + "\"token\" : \"" + connToken + "\"," + "\"dbName\": \"" + dbName + "\",\n" + "\"cmd\" : \"PUT\",\n" + "\"rel\" : \"" + relName + "\"," + "\"jsonStr\": \n" + jsonObj + "\n" + "}";
-return putRequest;
+  var putRequest =
+    "{\n" +
+    '"token" : "' +
+    connToken +
+    '",' +
+    '"dbName": "' +
+    dbName +
+    '",\n' +
+    '"cmd" : "PUT",\n' +
+    '"rel" : "' +
+    relName +
+    '",' +
+    '"jsonStr": \n' +
+    jsonObj +
+    "\n" +
+    "}";
+  return putRequest;
 }
+```
